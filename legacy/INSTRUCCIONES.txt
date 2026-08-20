@@ -1,0 +1,37 @@
+PRIME EXPRESS — ARCHIVOS PARA HOSTING
+=====================================
+
+Este paquete contiene una versión estática completa de la web.
+No necesita React, Node.js ni instalar dependencias.
+
+CONTENIDO
+---------
+- index.html: página principal.
+- css/main.css: estilos.
+- js/main.js: animación Canvas, scroll, menú y formulario.
+- hero-frames/: secuencia de imágenes del hero.
+- brand/: logotipo.
+- media/: fotografías y video animado de las secciones.
+- favicon.svg y og.png: icono y portada al compartir.
+
+SUBIR CON CPANEL
+---------------
+1. Haz una copia de seguridad del contenido actual del dominio.
+2. Abre Administrador de archivos > public_html.
+3. Sube el archivo ZIP y extráelo.
+4. Los archivos deben quedar directamente dentro de public_html. Es decir,
+   public_html/index.html debe existir; no debe quedar otra carpeta intermedia.
+5. Confirma que public_html/hero-frames tenga los 197 archivos WebP.
+6. Abre el dominio y limpia la caché del navegador y del hosting si fuera necesario.
+
+IMPORTANTE
+----------
+- Si el dominio actualmente utiliza WordPress, no reemplaces public_html sin
+  una copia de seguridad. Esta versión deberá instalarse en una carpeta de
+  prueba o convertirse en un tema/plantilla de WordPress.
+- El formulario actualmente abre el programa de correo del visitante mediante
+  mailto. Más adelante puede conectarse a HubSpot, Web3Forms u otra API.
+- Las rutas de imágenes son relativas, por lo que la web funciona en el dominio
+  principal o en una subcarpeta.
+- El hero y el timeline de "Cómo trabajamos" dependen de JavaScript y Canvas.
+  No elimines js/main.js ni los archivos de hero-frames.

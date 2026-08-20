@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prime Express | Logística integral B2B en Lima</title>
+<meta name="description" content="Almacenaje, distribución y servicios de valor agregado para marcas que necesitan escalar en Lima sin construir su propia infraestructura logística.">
+<meta name="theme-color" content="#021d3d">
+<meta property="og:title" content="Prime Express | Tú dedícate a vender">
+<meta property="og:description" content="Operador logístico B2B en Lima: almacenaje, distribución y control de inventario bajo un mismo equipo responsable.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_PE">
+<meta property="og:image" content="media/hero-poster.webp">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/azeret-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="hero-frames/frame-001.webp" as="image" fetchpriority="high">
+<link rel="stylesheet" href="css/main.css">
+<script src="js/main.js" defer></script>
+</head>
+<body>
+<!--
+  DIRECTION CONTRACT · Prime Express · home
+  THESIS: tu inventario tiene dirección exacta, y esta página está construida con ese mismo sistema de
+  coordenadas: se recorre como un pasillo de racks. Rechaza el hero de dashboard de tracking sobre degradado
+  navy y el tríptico de tarjetas con ícono que envía toda la categoría logística.
+  OWN-WORLD: plano de elevación de racks. Blanco de plano #eef2f6 y navy #021d3d en los tramos filmados,
+  azul #034287 para líneas de cota, hatching y bahías; naranja #ff7300 reservado a la posición activa y a la
+  acción. Titulares en Archivo expandido; coordenadas, cotas y conteos en Azeret Mono. Marcas de registro,
+  líneas de cota con topes y numeración de bahía como cromo estructural.
+  STORY: el visitante entiende que Prime Express direcciona, custodia y mueve su mercadería con un sistema;
+  cree que puede escalar en campaña sin construir almacén; solicita una evaluación de su operación.
+  FIRST VIEWPORT: video propio del van a sangre completa visto a través de una bahía de rack que se abre en
+  profundidad real; titular a la izquierda a 5.5rem en dos líneas; botón naranja bajo el párrafo; rail de
+  coordenadas de bahía fijo al borde y contador de escena a la derecha.
+  FORM: candidato 1 de mi lista ordenada (plano de elevación de racks), elegido por el usuario por encima del
+  asignado 4 (sistema de etiquetado); roll degradado, seed 9eb07177.
+  FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict,
+  DESIGN.md, and every shipping raster carrying its provenance.
+-->
+
+<svg class="icon-defs" aria-hidden="true" focusable="false"><defs>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-bay" viewBox="0 0 24 24"><path d="M3 4v16M21 4v16M3 9h18M3 15h18M8 9V4M16 15v6"/></symbol>
+  <symbol id="i-scan" viewBox="0 0 24 24"><path d="M3 8V4h4M21 8V4h-4M3 16v4h4M21 16v4h-4M3 12h18"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><path d="M6 20V9a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v11M3 20h18M9 6V3h6v3M9 20v-4h6v4"/></symbol>
+  <symbol id="i-kit" viewBox="0 0 24 24"><path d="M4 8.5 12 4l8 4.5v7L12 20l-8-4.5zM4 8.5 12 13l8-4.5M12 13v7"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 12l5 2v4a2 2 0 0 1-2 2A15 15 0 0 1 3 5a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 6h18v12H3zM3 7l9 6 9-6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.4 7-11a7 7 0 1 0-14 0c0 4.6 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12.5 9.5 18 20 6.5"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M5 9v10M5 5.5v.01M10 19v-6a3 3 0 0 1 6 0v6"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><path d="M17 7v.01"/></symbol>
+  <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14.5 21v-8h2.7l.5-3h-3.2V8.2c0-.9.3-1.5 1.6-1.5H18V4.1A21 21 0 0 0 15.6 4C13.2 4 11.5 5.4 11.5 8v2H9v3h2.5v8"/></symbol>
+</defs></svg>
+
+<div class="boot" data-boot>
+  <div class="boot-plate">
+    <img src="brand/prime-express-logo.png" alt="" width="445" height="183">
+    <div class="boot-scale"><span data-boot-fill></span></div>
+    <p class="mono">Cargando pasillo <b data-boot-pct>0</b>%</p>
+  </div>
+</div>
+
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="topbar" data-topbar>
+  <a class="topbar-brand" href="#inicio" aria-label="Prime Express, inicio">
+    <img src="brand/prime-express-logo.png" alt="Prime Express" width="445" height="183">
+  </a>
+  <nav class="topbar-nav" data-nav aria-label="Navegación principal">
+    <a href="#soluciones">Soluciones</a>
+    <a href="#control">Tecnología</a>
+    <a href="#proceso">Cómo trabajamos</a>
+    <a href="#nosotros">Nosotros</a>
+    <a class="btn btn-solid" href="#contacto">Cotizar operación<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+  </nav>
+  <button class="topbar-toggle" type="button" data-menu aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-movil">
+    <svg class="ico" aria-hidden="true"><use href="#i-menu"/></svg>
+  </button>
+</header>
+
+<div class="drawer" id="menu-movil" data-drawer>
+  <nav aria-label="Navegación">
+    <a href="#soluciones"><i class="mono">A-03</i>Soluciones</a>
+    <a href="#control"><i class="mono">A-04</i>Tecnología</a>
+    <a href="#capacidad"><i class="mono">A-05</i>Capacidad</a>
+    <a href="#proceso"><i class="mono">A-06</i>Cómo trabajamos</a>
+    <a href="#nosotros"><i class="mono">A-07</i>Nosotros</a>
+    <a class="btn btn-solid" href="#contacto">Cotizar operación<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+  </nav>
+</div>
+
+<div class="rail" data-rail aria-hidden="true">
+  <span class="rail-line"><i data-rail-fill></i></span>
+  <ol class="mono">
+    <li><a href="#inicio" data-rail-item="inicio">A-01</a></li>
+    <li><a href="#valor" data-rail-item="valor">A-02</a></li>
+    <li><a href="#soluciones" data-rail-item="soluciones">A-03</a></li>
+    <li><a href="#control" data-rail-item="control">A-04</a></li>
+    <li><a href="#capacidad" data-rail-item="capacidad">A-05</a></li>
+    <li><a href="#proceso" data-rail-item="proceso">A-06</a></li>
+    <li><a href="#nosotros" data-rail-item="nosotros">A-07</a></li>
+    <li><a href="#contacto" data-rail-item="contacto">A-08</a></li>
+  </ol>
+</div>
+
+<main id="contenido">
+
+  <!-- A-01 · pasillo -->
+  <section id="inicio" class="aisle" data-aisle>
+    <div class="aisle-stage">
+      <div class="aisle-depth">
+        <canvas class="aisle-canvas" data-canvas width="1440" height="609" aria-label="Unidad Prime Express avanzando dentro del almacén"></canvas>
+        <div class="aisle-poster" aria-hidden="true"></div>
+      </div>
+      <div class="aisle-wash" aria-hidden="true"></div>
+      <div class="bay-frame" aria-hidden="true">
+        <span class="bay-upright bay-upright--l"></span>
+        <span class="bay-upright bay-upright--r"></span>
+        <span class="bay-beam bay-beam--t"></span>
+        <span class="bay-beam bay-beam--b"></span>
+      </div>
+      <div class="aisle-grid" aria-hidden="true"></div>
+
+      <div class="aisle-copy">
+        <div class="scene is-on">
+          <h1><span class="wide">Tú dedícate a vender.</span><em>Nosotros hacemos el resto.</em></h1>
+          <p>Almacenaje, distribución y logística integral para marcas de importación retail que necesitan escalar sin fricción.</p>
+          <a class="btn btn-solid btn-lg" href="#contacto">Conversemos sobre tu operación<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="scene">
+          <h2><span class="wide">Escala tu operación,</span><em>no tu infraestructura.</em></h2>
+          <p>Paga por la capacidad que necesitas y responde a cada campaña sin construir un almacén desde cero.</p>
+        </div>
+        <div class="scene">
+          <h2><span class="wide">Control para crecer</span><em>con menos fricción.</em></h2>
+          <p>Visibilidad de inventario, procesos estructurados y una operación preparada para seguir tu ritmo.</p>
+        </div>
+      </div>
+
+      <div class="aisle-meter mono" aria-hidden="true">
+        <span class="is-on">01<i></i></span>
+        <span>02<i></i></span>
+        <span>03<i></i></span>
+      </div>
+      <p class="aisle-cue mono" aria-hidden="true"><span></span>Desliza para recorrer el pasillo</p>
+    </div>
+  </section>
+
+  <!-- A-02 · elevación -->
+  <section id="valor" class="sheet elevation-sec" data-section="valor">
+    <div class="shell">
+      <div class="sheet-head">
+        <h2 class="display">Crece sin cargar con <em>la infraestructura.</em></h2>
+        <p class="lede">Nos encargamos de la complejidad operativa para que tu equipo recupere tiempo, control y capacidad de decisión.</p>
+      </div>
+
+      <div class="elevation" data-elevation>
+        <div class="elev-rule mono" aria-hidden="true"><span>NIVEL 03</span><span>NIVEL 02</span><span>NIVEL 01</span></div>
+        <article class="bay bay--tall" data-bay>
+          <span class="bay-code mono" aria-hidden="true">A-02-01</span>
+          <figure class="bay-photo">
+            <img src="media/pasillo.webp" alt="Pasillo de almacenaje de Prime Express con niveles de racks ocupados" width="1800" height="1200" loading="lazy" decoding="async">
+          </figure>
+          <h3>Paga por lo que usas</h3>
+          <p>Escala en campaña y reduce capacidad cuando baja la demanda, sin obras ni estructura fija.</p>
+          <span class="bay-load" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        </article>
+        <article class="bay" data-bay>
+          <span class="bay-code mono" aria-hidden="true">A-02-02</span>
+          <h3>Sabes qué tienes y dónde está</h3>
+          <p>Visibilidad del inventario para decidir con información clara y actualizada.</p>
+          <span class="bay-load" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        </article>
+        <article class="bay bay--wide" data-bay>
+          <span class="bay-code mono" aria-hidden="true">A-02-03</span>
+          <h3>Menos errores, menos reclamos</h3>
+          <p>Procesos estructurados para mejorar la precisión en picking, preparación y despacho.</p>
+          <span class="bay-load" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+        </article>
+        <span class="elev-floor" aria-hidden="true"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- A-03 · soluciones -->
+  <section id="soluciones" class="sheet solutions" data-section="soluciones">
+    <div class="shell">
+      <div class="sheet-head sheet-head--split">
+        <h2 class="display">Una logística integral.<em>Un solo equipo responsable.</em></h2>
+        <p class="lede">Desde que recibimos tu mercadería hasta que llega al punto de venta, cada etapa se conecta para darte continuidad y control.</p>
+      </div>
+
+      <div class="racks">
+        <article class="rack rack--lead" data-plate>
+          <figure class="plate">
+            <img src="media/almacen.webp" alt="Pasillo de racks de Prime Express con pallets estibados y un montacargas en operación" width="1800" height="900" loading="lazy" decoding="async">
+            <figcaption class="mono">A-03-01 · Almacenaje</figcaption>
+          </figure>
+          <div class="rack-body">
+            <h3>Espacio que crece al ritmo de tu negocio.</h3>
+            <p>Recepción, validación, custodia, control de inventario, picking, packing y logística inversa dentro de una misma operación.</p>
+            <ul class="specs">
+              <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Inventario organizado y trazable</li>
+              <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Capacidad flexible por temporada</li>
+              <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Preparación precisa de pedidos</li>
+            </ul>
+            <a class="btn btn-line" href="#contacto">Evaluar mi operación<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </article>
+
+        <article class="rack rack--tall" data-plate>
+          <figure class="plate">
+            <img src="media/flota.webp" alt="Unidad de reparto de Prime Express lista para salir a ruta" width="1600" height="1067" loading="lazy" decoding="async">
+            <figcaption class="mono">A-03-02 · Transporte</figcaption>
+          </figure>
+          <div class="rack-body">
+            <h3>Tu carga se mueve con seguimiento y coordinación.</h3>
+            <p>Distribución programada en Lima para centros comerciales, puntos de venta, distribuidores y agencias.</p>
+            <a class="btn btn-line" href="#contacto">Conocer la solución<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </article>
+
+        <article class="rack rack--vas" data-plate>
+          <figure class="plate">
+            <img src="media/etiquetas.webp" alt="Etiquetas de identificación Prime Express aplicadas sobre mercadería preparada" width="1200" height="800" loading="lazy" decoding="async">
+            <figcaption class="mono">A-03-03 · Valor agregado</figcaption>
+          </figure>
+          <div class="rack-body">
+            <h3>Tu mercadería lista para salir al mercado.</h3>
+            <p>Etiquetado, rotulado, armado de kits, filmado, paletizado y acondicionamiento según tu operación.</p>
+            <a class="btn btn-line" href="#contacto">Cuéntanos qué necesitas<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- A-04 · control -->
+  <section id="control" class="dark control" data-section="control">
+    <div class="control-plan" aria-hidden="true"></div>
+    <div class="shell control-layout">
+      <div class="control-copy">
+        <h2 class="display">No adivines tu inventario. <em>Tenlo bajo control.</em></h2>
+        <p class="lede">El WMS propio de Prime Express conecta cada movimiento con información útil para tu operación.</p>
+        <dl class="dims">
+          <div><dt>Ubicación clara</dt><dd>de tu mercadería dentro de la operación.</dd></div>
+          <div><dt>Movimientos trazables</dt><dd>desde la recepción hasta el despacho.</dd></div>
+          <div><dt>Decisiones con datos</dt><dd>para reducir quiebres y tareas manuales.</dd></div>
+        </dl>
+      </div>
+
+      <div class="control-visual" data-tilt>
+        <figure class="plate plate--photo">
+          <img src="media/escaneo.webp" alt="Operario de Prime Express registrando mercadería con un terminal de radiofrecuencia" width="1400" height="934" loading="lazy" decoding="async">
+        </figure>
+        <div class="wms" role="img" aria-label="Esquema del mapa de ubicaciones del WMS de Prime Express">
+          <div class="wms-bar mono"><span><i class="live"></i>PRIME · CONTROL</span><span>Mapa de ubicaciones</span></div>
+          <div class="wms-map" data-map>
+            <div class="wms-grid" data-unit-count="40"></div>
+            <div class="wms-legend mono"><span><i class="dot dot--free"></i>Posición asignada</span><span><i class="dot dot--hot"></i>Movimiento del día</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- A-05 · capacidad -->
+  <section id="capacidad" class="sheet capacity" data-section="capacidad">
+    <div class="shell capacity-layout">
+      <div class="capacity-visual" data-capacity aria-hidden="true">
+        <div class="cap-labels mono"><span class="peak">+ Capacidad de campaña</span></div>
+        <div class="cap-rack">
+          <div class="cap-level" data-level><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="cap-level" data-level><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="cap-level" data-level><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="cap-level" data-level><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+        <span class="cap-measure mono"><b>Capacidad base contratada</b></span>
+      </div>
+      <div class="capacity-copy">
+        <h2 class="display">Tu operación cambia.<em>Tu logística también.</em></h2>
+        <p class="lede">Gana capacidad en temporadas de alta demanda y ajústala cuando el volumen baja. Sin construir, equipar ni administrar un almacén propio.</p>
+        <p class="pullquote">Menos estructura fija.<br>Más capacidad para vender.</p>
+        <a class="btn btn-line" href="#contacto">Diseñar una operación flexible<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- A-06 · proceso -->
+  <section id="proceso" class="corridor" data-corridor>
+    <div class="corridor-stage">
+      <div class="shell corridor-head">
+        <h2 class="display">Cuatro momentos.<em>Una operación conectada.</em></h2>
+        <p class="lede">Cada etapa deja de ser una tarea aislada y se convierte en parte de un flujo visible y coordinado.</p>
+      </div>
+      <div class="corridor-floor" aria-hidden="true"><span class="floor-line"><i data-corridor-fill></i></span></div>
+      <div class="corridor-van" aria-hidden="true"><img src="media/prime-van-cutout.png" alt="" width="900" height="420"></div>
+      <div class="corridor-track" data-track>
+        <ol class="stages">
+          <li class="is-on" data-stage>
+            <span class="stage-code mono">Etapa 01</span>
+            <h3>Recibimos</h3>
+            <p>Validamos la mercadería contra tu documentación y la incorporamos a la operación.</p>
+          </li>
+          <li data-stage>
+            <span class="stage-code mono">Etapa 02</span>
+            <h3>Organizamos</h3>
+            <p>Asignamos ubicación en rack y mantenemos el inventario trazable en el WMS.</p>
+          </li>
+          <li data-stage>
+            <span class="stage-code mono">Etapa 03</span>
+            <h3>Preparamos</h3>
+            <p>Ejecutamos picking, packing y acondicionamiento según lo que pide cada pedido.</p>
+          </li>
+          <li data-stage>
+            <span class="stage-code mono">Etapa 04</span>
+            <h3>Distribuimos</h3>
+            <p>Coordinamos entregas programadas dentro de Lima y confirmamos la recepción.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- A-07 · nosotros -->
+  <section id="nosotros" class="dark trust" data-section="nosotros">
+    <video class="trust-video" data-video autoplay muted loop playsinline preload="none" poster="media/aerial-poster.webp" aria-hidden="true" tabindex="-1">
+      <source src="media/aerial.mp4" type="video/mp4">
+    </video>
+    <div class="trust-wash" aria-hidden="true"></div>
+    <div class="shell trust-layout">
+      <div class="trust-copy">
+        <h2 class="display">Entendemos tu operación para <em>atenderla mejor.</em></h2>
+        <p class="lede">Una estructura cercana, ágil y orientada a dar continuidad a empresas que no pueden detener su cadena de abastecimiento.</p>
+        <div class="span" aria-label="11 años operando en el mercado logístico de Lima">
+          <span class="span-end mono">2015</span>
+          <span class="span-bar"><b>11 años operando en Lima</b></span>
+          <span class="span-end mono">2026</span>
+        </div>
+        <ul class="tags mono">
+          <li>100% B2B</li>
+          <li>Sede en Punta Hermosa</li>
+          <li>Cobertura Lima</li>
+        </ul>
+      </div>
+      <div class="trust-plates" data-tilt>
+        <figure class="plate plate--photo">
+          <img src="media/equipo-retrato.webp" alt="Supervisor de almacén de Prime Express en el pasillo de racks" width="1024" height="768" loading="lazy" decoding="async">
+        </figure>
+        <figure class="plate plate--photo">
+          <img src="media/control-fisico.webp" alt="Dos colaboradores de Prime Express verificando mercadería contra el listado de recepción" width="1400" height="934" loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- A-08 · contacto -->
+  <section id="contacto" class="sheet contact" data-section="contacto">
+    <div class="shell contact-layout">
+      <div class="contact-copy">
+        <h2 class="display">¿Tu logística está lista para <em>el siguiente nivel?</em></h2>
+        <p class="lede">Cuéntanos qué manejas hoy y diseñaremos una propuesta alineada a tu volumen, servicio y ritmo de crecimiento.</p>
+        <ul class="contact-data">
+          <li><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+51936797732"><span class="mono">Teléfono / WhatsApp</span>+51 936 797 732</a></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:ventas@prime-express.pe"><span class="mono">Correo comercial</span>ventas@prime-express.pe</a></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><p><span class="mono">Sede principal</span>Panamericana Sur 2001, Km. 38<br>Punta Hermosa, Lima</p></li>
+        </ul>
+      </div>
+
+      <form class="order" data-form novalidate>
+        <div class="order-head mono"><span>Orden de evaluación</span><span>Hoja 01 / 01</span></div>
+        <div class="order-fields">
+          <label class="field"><span>Empresa</span><input name="empresa" required autocomplete="organization" placeholder="Nombre de tu empresa"></label>
+          <label class="field"><span>Nombre de contacto</span><input name="nombre" required autocomplete="name" placeholder="Nombre y apellido"></label>
+          <label class="field"><span>Correo corporativo</span><input name="correo" type="email" required autocomplete="email" placeholder="nombre@empresa.com"></label>
+          <label class="field"><span>Teléfono</span><input name="telefono" type="tel" required autocomplete="tel" placeholder="+51 9xx xxx xxx"></label>
+          <label class="field"><span>Servicio de interés</span>
+            <select name="servicio" required>
+              <option value="" selected disabled>Selecciona una opción</option>
+              <option>Almacenaje</option>
+              <option>Transporte y distribución</option>
+              <option>Logística integral</option>
+              <option>Servicios de valor agregado</option>
+            </select>
+          </label>
+          <label class="field"><span>Volumen aproximado</span>
+            <select name="volumen" required>
+              <option value="" selected disabled>Selecciona un rango</option>
+              <option>Menos de 60 pallets / mes</option>
+              <option>60 a 150 pallets / mes</option>
+              <option>Más de 150 pallets / mes</option>
+              <option>Aún no lo tengo definido</option>
+            </select>
+          </label>
+        </div>
+        <p class="order-error" data-error hidden></p>
+        <button class="btn btn-solid btn-block" type="submit">Solicitar evaluación<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        <p class="order-note">Al enviar se abrirá tu correo con los datos ya redactados hacia ventas@prime-express.pe. La integración directa con el CRM se conectará cuando esté disponible la API.</p>
+        <div class="order-done" data-done role="status" tabindex="-1" hidden>
+          <svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>
+          <p><b>Listo, abrimos tu correo.</b> Si no se abrió solo, escríbenos a <a href="mailto:ventas@prime-express.pe">ventas@prime-express.pe</a> o al <a href="tel:+51936797732">+51 936 797 732</a>.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="shell footer-grid">
+    <div class="footer-brand">
+      <img src="brand/prime-express-logo.png" alt="Prime Express" width="445" height="183">
+      <p>Logística integral B2B para empresas que necesitan crecer con control.</p>
+    </div>
+    <nav aria-label="Navegación del pie">
+      <h2 class="mono">Navegación</h2>
+      <a href="#soluciones">Soluciones</a>
+      <a href="#control">Tecnología</a>
+      <a href="#proceso">Cómo trabajamos</a>
+      <a href="#nosotros">Nosotros</a>
+    </nav>
+    <div>
+      <h2 class="mono">Contacto</h2>
+      <a href="mailto:ventas@prime-express.pe">ventas@prime-express.pe</a>
+      <a href="tel:+51936797732">+51 936 797 732</a>
+      <p>Panamericana Sur 2001, Km. 38<br>Punta Hermosa, Lima</p>
+    </div>
+    <div>
+      <h2 class="mono">Conecta</h2>
+      <ul class="social">
+        <li><a href="#contacto" aria-label="LinkedIn de Prime Express"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+        <li><a href="#contacto" aria-label="Instagram de Prime Express"><svg class="ico" aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
+        <li><a href="#contacto" aria-label="Facebook de Prime Express"><svg class="ico" aria-hidden="true"><use href="#i-facebook"/></svg></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="shell footer-base mono">
+    <span>© 2026 Prime Express Perú S.A.C.</span>
+    <span>Entender para atender.</span>
+  </div>
+</footer>
+</body>
+</html>
