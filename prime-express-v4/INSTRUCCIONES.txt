@@ -12,7 +12,7 @@ css/main.css          Estilos.
 js/main.js            Motor de recorrido: secuencia del hero, pasillo horizontal,
                       mapa del WMS, menú y formulario.
 fonts/                Tipografías Archivo y Azeret Mono (self-hosted, no llaman a Google).
-hero-frames/          197+ imágenes WebP del hero para pantallas grandes (1440 px).
+hero-frames/          200 imágenes WebP del hero para pantallas grandes (1440 px).
 hero-frames-sm/       La misma secuencia a 800 px para celulares.
 media/                Fotografías, video aéreo y posters.
 brand/                Logotipo.
@@ -91,7 +91,8 @@ ACCESIBILIDAD Y RENDIMIENTO
 ---------------------------
 - Si el visitante tiene activada la reducción de movimiento en su sistema, la
   página se muestra sin animación de scroll y con todo el contenido visible.
-- La secuencia del hero carga primero 24 imágenes y el resto en segundo plano.
+- La secuencia del hero carga primero 10 imágenes (o 2,5 s, lo que ocurra antes)
+  y el resto en segundo plano.
 - El video de "Nosotros" solo se descarga cuando la sección entra en pantalla.
 - En celular se usa la secuencia liviana (hero-frames-sm).
 
