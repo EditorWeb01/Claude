@@ -7,6 +7,7 @@
   const q = (sel, root = document) => root.querySelector(sel);
   const qa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
   const clamp = (v, a = 0, b = 1) => (v < a ? a : v > b ? b : v);
+  const smoothstep = (t) => { const s = t * t * (3 - 2 * t); return s * s * (3 - 2 * s); };
   const between = (v, a, b) => clamp((v - a) / (b - a));
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
 
@@ -48,7 +49,7 @@
   const bootPct = q("[data-boot-pct]");
 
   const TOTAL = 200;
-  const PRIORITY = 24;
+  const PRIORITY = 10;
   const small = window.matchMedia("(max-width: 860px)").matches;
   const dir = small ? "hero-frames-sm" : "hero-frames";
   const frames = new Array(TOTAL).fill(null);
@@ -121,7 +122,7 @@
   if (canvas && !reduced.matches) {
     document.body.classList.add("is-booting");
     for (let i = 0; i < PRIORITY; i += 1) ask(i, true);
-    window.setTimeout(closeBoot, 7000);
+    window.setTimeout(closeBoot, 2500);
     window.setTimeout(() => {
       let i = PRIORITY;
       const batch = () => {
@@ -228,6 +229,17 @@
 
   let scene = -1;
   let stage = -1;
+  let stageCenters = [];
+
+  let stageTravel = 0;
+
+  /* El recorrido se mide sobre las tarjetas, no sobre el scrollWidth del contenedor:
+     el track desborda con overflow visible y su scrollWidth se queda corto. */
+  const measureStages = () => {
+    stageCenters = stages.map((li) => li.offsetLeft + li.offsetWidth / 2);
+    const last = stageCenters[stageCenters.length - 1] || 0;
+    stageTravel = Math.max(last - window.innerWidth / 2, 0);
+  };
   let lastY = window.scrollY;
   let idle = 0;
   let running = false;
@@ -279,15 +291,25 @@
 
     if (capacity) setCapacity(ease("cap", progressOf(capacity, 0.95, 0.4), 0.1));
 
-    /* pasillo horizontal */
-    if (corridor && track && !reduced.matches) {
+    /* pasillo horizontal: el track descansa con una etapa encuadrada y avanza de una a otra */
+    if (corridor && track && stages.length && !reduced.matches) {
       const p = ease("corridor", stickyProgress(corridor), 0.13);
-      const max = Math.max(track.scrollWidth - window.innerWidth + 40, 0);
+      const travel = clamp(p / 0.92);
       const stagesEl = track.firstElementChild;
-      if (stagesEl) stagesEl.style.setProperty("--shift", (-p * max).toFixed(1) + "px");
-      corridor.style.setProperty("--run", p.toFixed(4));
-      if (corridorFill) corridorFill.style.transform = `scaleX(${p.toFixed(4)})`;
-      setStage(Math.min(Math.floor(p * stages.length * 0.999), stages.length - 1));
+      if (!stageCenters.length) measureStages();
+
+      const steps = Math.max(stages.length - 1, 1);
+      const step = travel * steps;
+      const index = Math.min(Math.floor(step), steps - 1);
+      /* la transición ocupa el tramo central del paso: el track descansa encuadrado */
+      const local = smoothstep(clamp((step - index - 0.22) / 0.56));
+      const center = stageCenters[index] + (stageCenters[index + 1] - stageCenters[index]) * local;
+      const shift = window.innerWidth / 2 - center;
+
+      if (stagesEl) stagesEl.style.setProperty("--shift", shift.toFixed(1) + "px");
+      corridor.style.setProperty("--run", travel.toFixed(4));
+      if (corridorFill) corridorFill.style.transform = `scaleX(${travel.toFixed(4)})`;
+      setStage(local < 0.5 ? index : index + 1);
     }
 
     /* rail y barra */
@@ -331,9 +353,10 @@
   };
 
   window.addEventListener("scroll", kick, { passive: true });
-  window.addEventListener("resize", () => { drawn = -1; kick(); }, { passive: true });
+  window.addEventListener("resize", () => { drawn = -1; measureStages(); kick(); }, { passive: true });
   window.addEventListener("orientationchange", () => { drawn = -1; kick(); });
   document.addEventListener("visibilitychange", () => { if (!document.hidden) kick(); });
+  measureStages();
   kick();
 
   /* ---------- formulario ---------- */

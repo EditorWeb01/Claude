@@ -109,5 +109,21 @@ media/pasillo.webp
     Proviene de AdobeStock_107182915.jpeg, entregada en el paquete de fotos.
     Es material de banco: verifica que la licencia cubra el uso en el sitio web
     antes de publicar, o reemplázala por una foto propia del almacén.
+media/prime-van-cutout.png
+    Recorte con transparencia de un fotograma del video anterior de Prime Express.
+    La unidad lleva el logotipo chevron (la identidad vigente que confirmaste), mientras
+    que las unidades del video nuevo y la foto del Berlingo llevan el swoosh. Si prefieres
+    que la van del recorrido lleve el swoosh, avísanos y generamos el recorte desde el
+    video nuevo.
 brand/prime-express-logo.png, favicon.svg
     Identidad vigente entregada por Prime Express.
+
+
+PENDIENTES QUE DEPENDEN DE TI
+-----------------------------
+- Licencia de media/pasillo.webp (archivo AdobeStock del paquete de fotos).
+- URLs reales de LinkedIn, Instagram y Facebook. Se retiraron del pie porque los
+  enlaces no apuntaban a ninguna cuenta; cuando las tengas se agregan como una
+  lista <ul class="social"> en la última columna de <footer>.
+- Endpoint del CRM para el formulario (hoy abre el correo del visitante).
+- Qué logotipo debe llevar la van del recorrido "Cómo trabajamos" (ver arriba).

@@ -97,14 +97,14 @@
 <div class="rail" data-rail aria-hidden="true">
   <span class="rail-line"><i data-rail-fill></i></span>
   <ol class="mono">
-    <li><a href="#inicio" data-rail-item="inicio">A-01</a></li>
-    <li><a href="#valor" data-rail-item="valor">A-02</a></li>
-    <li><a href="#soluciones" data-rail-item="soluciones">A-03</a></li>
-    <li><a href="#control" data-rail-item="control">A-04</a></li>
-    <li><a href="#capacidad" data-rail-item="capacidad">A-05</a></li>
-    <li><a href="#proceso" data-rail-item="proceso">A-06</a></li>
-    <li><a href="#nosotros" data-rail-item="nosotros">A-07</a></li>
-    <li><a href="#contacto" data-rail-item="contacto">A-08</a></li>
+    <li><a href="#inicio" data-rail-item="inicio" tabindex="-1">A-01</a></li>
+    <li><a href="#valor" data-rail-item="valor" tabindex="-1">A-02</a></li>
+    <li><a href="#soluciones" data-rail-item="soluciones" tabindex="-1">A-03</a></li>
+    <li><a href="#control" data-rail-item="control" tabindex="-1">A-04</a></li>
+    <li><a href="#capacidad" data-rail-item="capacidad" tabindex="-1">A-05</a></li>
+    <li><a href="#proceso" data-rail-item="proceso" tabindex="-1">A-06</a></li>
+    <li><a href="#nosotros" data-rail-item="nosotros" tabindex="-1">A-07</a></li>
+    <li><a href="#contacto" data-rail-item="contacto" tabindex="-1">A-08</a></li>
   </ol>
 </div>
 
@@ -196,6 +196,9 @@
       </div>
 
       <div class="racks">
+        <div class="rack-rule mono" aria-hidden="true">
+          <span>Bahía 01</span><span>Bahía 02</span><span>Bahía 03</span>
+        </div>
         <article class="rack rack--lead" data-plate>
           <figure class="plate">
             <img src="media/almacen.webp" alt="Pasillo de racks de Prime Express con pallets estibados y un montacargas en operación" width="1800" height="900" loading="lazy" decoding="async">
@@ -236,6 +239,7 @@
             <a class="btn btn-line" href="#contacto">Cuéntanos qué necesitas<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </div>
         </article>
+        <span class="racks-floor" aria-hidden="true"></span>
       </div>
     </div>
   </section>
@@ -258,11 +262,12 @@
         <figure class="plate plate--photo">
           <img src="media/escaneo.webp" alt="Operario de Prime Express registrando mercadería con un terminal de radiofrecuencia" width="1400" height="934" loading="lazy" decoding="async">
         </figure>
-        <div class="wms" role="img" aria-label="Esquema del mapa de ubicaciones del WMS de Prime Express">
-          <div class="wms-bar mono"><span><i class="live"></i>PRIME · CONTROL</span><span>Mapa de ubicaciones</span></div>
+        <div class="wms" role="img" aria-label="Esquema ilustrativo del mapa de ubicaciones del WMS de Prime Express">
+          <div class="wms-bar mono"><span>PRIME · CONTROL</span><span>Mapa de ubicaciones</span></div>
           <div class="wms-map" data-map>
             <div class="wms-grid" data-unit-count="40"></div>
             <div class="wms-legend mono"><span><i class="dot dot--free"></i>Posición asignada</span><span><i class="dot dot--hot"></i>Movimiento del día</span></div>
+            <p class="wms-note">Esquema ilustrativo de cómo se ve una operación en el WMS. No refleja inventario real.</p>
           </div>
         </div>
       </div>
@@ -429,13 +434,9 @@
       <a href="tel:+51936797732">+51 936 797 732</a>
       <p>Panamericana Sur 2001, Km. 38<br>Punta Hermosa, Lima</p>
     </div>
-    <div>
-      <h2 class="mono">Conecta</h2>
-      <ul class="social">
-        <li><a href="#contacto" aria-label="LinkedIn de Prime Express"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
-        <li><a href="#contacto" aria-label="Instagram de Prime Express"><svg class="ico" aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
-        <li><a href="#contacto" aria-label="Facebook de Prime Express"><svg class="ico" aria-hidden="true"><use href="#i-facebook"/></svg></a></li>
-      </ul>
+    <div class="footer-cta">
+      <h2 class="mono">Tu operación</h2>
+      <a class="btn btn-line" href="#contacto">Solicitar evaluación<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
     </div>
   </div>
   <div class="shell footer-base mono">
