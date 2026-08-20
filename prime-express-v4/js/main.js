@@ -301,15 +301,29 @@
       const steps = Math.max(stages.length - 1, 1);
       const step = travel * steps;
       const index = Math.min(Math.floor(step), steps - 1);
-      /* la transición ocupa el tramo central del paso: el track descansa encuadrado */
-      const local = smoothstep(clamp((step - index - 0.22) / 0.56));
+      /* el barrido ocupa solo el 14% central de cada paso: casi cualquier posición
+         sostenida deja una etapa encuadrada */
+      const local = smoothstep(clamp((step - index - 0.455) / 0.09));
       const center = stageCenters[index] + (stageCenters[index + 1] - stageCenters[index]) * local;
       const shift = window.innerWidth / 2 - center;
 
       if (stagesEl) stagesEl.style.setProperty("--shift", shift.toFixed(1) + "px");
       corridor.style.setProperty("--run", travel.toFixed(4));
       if (corridorFill) corridorFill.style.transform = `scaleX(${travel.toFixed(4)})`;
-      setStage(local < 0.5 ? index : index + 1);
+
+      /* la etapa activa es la más contenida en pantalla, no la del reloj del scroll:
+         a mitad de barrido se resalta la que el visitante alcanza a leer */
+      const vw = window.innerWidth;
+      let pick = index;
+      let seen = -1;
+      stages.forEach((li, i) => {
+        const half = li.offsetWidth / 2;
+        const left = stageCenters[i] + shift - half;
+        const visible = Math.max(0, Math.min(left + li.offsetWidth, vw) - Math.max(left, 0));
+        const ratio = visible / li.offsetWidth;
+        if (ratio > seen + 0.001) { seen = ratio; pick = i; }
+      });
+      setStage(pick);
     }
 
     /* rail y barra */

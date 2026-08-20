@@ -325,7 +325,7 @@ figure { margin: 0; }
 .aisle-wash {
   position: absolute; inset: 0; z-index: 4;
   background:
-    linear-gradient(94deg, rgba(2, 22, 47, .97) 0%, rgba(2, 25, 53, .94) 38%, rgba(2, 30, 62, .72) 56%, rgba(2, 29, 61, .22) 74%, transparent 88%),
+    linear-gradient(94deg, rgba(2, 22, 47, .97) 0%, rgba(2, 25, 53, .95) 44%, rgba(2, 30, 62, .76) 62%, rgba(2, 29, 61, .26) 78%, transparent 92%),
     linear-gradient(180deg, rgba(1, 14, 30, .55), transparent 22%, transparent 64%, rgba(1, 14, 30, .68));
 }
 .aisle-grid {
@@ -343,7 +343,7 @@ figure { margin: 0; }
 }
 .scene {
   position: absolute; top: 50%; left: 0;
-  width: min(760px, 54vw);
+  width: min(900px, 63vw);
   opacity: 0; visibility: hidden;
   transform: translateY(calc(-50% + 26px));
   transition: opacity .5s var(--ease), transform .7s var(--ease), visibility .5s;
@@ -351,14 +351,14 @@ figure { margin: 0; }
 .scene.is-on { opacity: 1; visibility: visible; transform: translateY(-50%); }
 .scene h1, .scene h2 {
   color: #fff;
-  font-size: clamp(2.4rem, 5.6vw, 5.5rem);
+  font-size: clamp(2.4rem, 6.2vw, 5.5rem);
   font-weight: 800;
   font-variation-settings: "wdth" 104;
   line-height: .98;
   letter-spacing: -.04em;
 }
 .scene .wide { display: block; font-variation-settings: "wdth" 100; font-weight: 600; }
-.scene em { display: block; font-style: normal; color: var(--orange); }
+.scene em { display: block; font-style: normal; font-size: .78em; color: var(--orange); }
 .scene p {
   max-width: 46ch; margin-top: 24px;
   color: rgba(226, 236, 247, .82); font-size: 1.125rem; line-height: 1.65;
@@ -914,10 +914,10 @@ figure { margin: 0; }
   .scene h1, .scene h2 { font-size: clamp(2.2rem, 10.5vw, 3.1rem); }
   .scene p { font-size: 1rem; margin-top: 18px; }
   .btn-lg { width: 100%; justify-content: space-between; margin-top: 26px; }
-  .aisle-meter { top: auto; right: 18px; bottom: 54px; left: 18px;
+  .aisle-meter { top: auto; right: 18px; bottom: 26px; left: 18px;
     grid-auto-flow: column; justify-content: flex-end; gap: 14px; transform: none; }
   .aisle-meter i { width: 30px; }
-  .aisle-cue { bottom: 22px; font-size: .75rem; }
+  .aisle-cue { display: none; }
   .elevation { grid-template-columns: 1fr; padding-left: 0; }
   .elev-rule { display: none; }
   .elev-floor { left: 0; }
@@ -935,9 +935,9 @@ figure { margin: 0; }
   .corridor-floor { bottom: 58%; }
   .corridor-van { bottom: calc(58% - 10px); }
   .corridor-track { bottom: 3%; height: 54%; }
+  /* la altura del track vive solo aquí; no volver a declararla más abajo */
   .corridor-head .lede { display: none; }
   .corridor-head { gap: 14px; }
-  .corridor-track { height: 38%; }
   .stages { gap: 16px; padding: 30px 18px 0; }
   .stages li { width: min(78vw, 340px); padding: 24px; }
   .corridor-van { width: clamp(180px, 52vw, 280px); }
