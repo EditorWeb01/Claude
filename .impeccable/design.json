@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-25T00:00:00Z",
+  "title": "Design System: Prime Express",
+  "extensions": {
+    "colorMeta": {
+      "plan-white": { "role": "neutral", "displayName": "Plan White", "canonical": "#eef2f6", "tonalRamp": ["#ffffff", "#eef2f6", "#dde5ed"] },
+      "rack-blue": { "role": "primary", "displayName": "Rack Blue", "canonical": "#034287", "tonalRamp": ["#2f7fd6", "#034287", "#022f61"] },
+      "signal-orange": { "role": "secondary", "displayName": "Signal Orange", "canonical": "#ff7300", "tonalRamp": ["#ffa14d", "#ff7300", "#d96200"] },
+      "aisle-navy": { "role": "neutral", "displayName": "Aisle Navy", "canonical": "#021d3d", "tonalRamp": ["#034287", "#021d3d", "#03152b"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#0b1f33", "tonalRamp": ["#566a7d", "#0b1f33", "#021d3d"] },
+      "annotation-grey": { "role": "neutral", "displayName": "Annotation Grey", "canonical": "#566a7d", "tonalRamp": ["#8b9bab", "#566a7d", "#3d4d5e"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Solo el titular del hero. Enunciado en blanco, respuesta en naranja a .78em." },
+      "headline": { "displayName": "Headline", "purpose": "Titular de sección; segunda línea en azul sobre claro, naranja sobre oscuro." },
+      "title": { "displayName": "Title", "purpose": "Títulos de bahía, rack y etapa." },
+      "lede": { "displayName": "Lede", "purpose": "Párrafo que sigue al titular de sección; máximo 56ch." },
+      "body": { "displayName": "Body", "purpose": "Párrafos de tarjeta y listas." },
+      "label": { "displayName": "Label", "purpose": "Coordenadas, niveles, cotas y conteos. Nunca instrucciones ni navegación." }
+    },
+    "shadows": [
+      { "name": "plate", "value": "0 26px 48px -28px rgba(2,29,61,.55), 0 4px 12px -6px rgba(2,29,61,.3)", "purpose": "Placas fotográficas sobre la hoja de plano." },
+      { "name": "dark", "value": "0 24px 40px -24px rgba(0,0,0,.78), 0 6px 12px -8px rgba(0,0,0,.5)", "purpose": "Las mismas placas sobre el pasillo navy; sombra negra, nunca teñida." },
+      { "name": "stage-rest", "value": "0 12px 30px -26px rgba(2,29,61,.5)", "purpose": "Tarjeta de etapa al fondo del pasillo horizontal." },
+      { "name": "stage-active", "value": "0 26px 44px -28px rgba(2,29,61,.8)", "purpose": "Tarjeta de etapa encuadrada." },
+      { "name": "order-sheet", "value": "0 24px 44px -30px rgba(2,29,61,.55)", "purpose": "La orden de evaluación apoyada sobre la hoja." }
+    ],
+    "motion": [
+      { "name": "ease", "value": "cubic-bezier(.16, 1, .3, 1)", "purpose": "Única curva del sistema: desaceleración exponencial para llegadas seguras." },
+      { "name": "feedback", "value": "220ms", "purpose": "Botones, campos, cambios de estado inmediatos." },
+      { "name": "state", "value": "300–450ms", "purpose": "Entradas de sección, cambios de marco, relevos de escena." },
+      { "name": "authored", "value": "500–700ms", "purpose": "Entradas compuestas: escenas del hero y tarjetas de etapa." },
+      { "name": "scroll-lerp", "value": "0.10–0.16 por frame", "purpose": "Suavizado de los valores escalares que el scroll escribe como custom properties; el scroll nativo nunca se secuestra." },
+      { "name": "stage-sweep", "value": "9% central de cada paso", "purpose": "Ventana de barrido del pasillo horizontal; el resto del paso descansa con una etapa encuadrada." }
+    ],
+    "breakpoints": [
+      { "name": "rail-off", "value": "1180px" },
+      { "name": "handheld", "value": "860px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botón sólido",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "La acción del sistema: naranja con texto navy, radio cero, ícono que se desplaza en diagonal al hover.",
+      "html": "<a class=\"ds-btn\" href=\"#contacto\">Conversemos sobre tu operación<svg viewBox=\"0 0 24 24\"><path d=\"M7 17 17 7M9 7h8v8\"/></svg></a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 14px; padding: 14px 20px; border: 1px solid transparent; background: #ff7300; color: #021d3d; font-family: Archivo, system-ui, sans-serif; font-size: .875rem; font-weight: 700; text-decoration: none; transition: background .22s cubic-bezier(.16,1,.3,1), transform .22s cubic-bezier(.16,1,.3,1); } .ds-btn svg { width: 1.1em; height: 1.1em; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: square; stroke-linejoin: miter; transition: transform .3s cubic-bezier(.16,1,.3,1); } .ds-btn:hover { background: #ffa14d; } .ds-btn:hover svg { transform: translate(3px,-3px); } .ds-btn:active { transform: translateY(1px); }"
+    },
+    {
+      "name": "Bahía",
+      "kind": "card",
+      "refersTo": "bay",
+      "description": "La superficie base del dibujo: borde azul, marco punteado interior, coordenada arriba a la derecha y una cota al pie.",
+      "html": "<article class=\"ds-bay\"><span class=\"ds-code\">A-02-02</span><h3>Sabes qué tienes y dónde está</h3><p>Visibilidad del inventario para decidir con información clara y actualizada.</p><span class=\"ds-cota\"></span></article>",
+      "css": ".ds-bay { position: relative; display: flex; flex-direction: column; justify-content: flex-end; min-height: 220px; padding: 30px; background: #fff; border: 1px solid rgba(3,66,135,.2); box-shadow: 0 18px 40px -30px rgba(2,29,61,.6); font-family: Archivo, system-ui, sans-serif; } .ds-bay::before { content: \"\"; position: absolute; inset: 8px; border: 1px dashed rgba(3,66,135,.1); z-index: 2; } .ds-code { position: absolute; top: 14px; right: 16px; font-family: 'Azeret Mono', monospace; font-size: .875rem; letter-spacing: .06em; text-transform: uppercase; color: #034287; } .ds-bay h3 { margin: 0; font-size: 1.9rem; font-weight: 700; line-height: 1.1; letter-spacing: -.03em; font-variation-settings: 'wdth' 104; color: #0b1f33; } .ds-bay p { margin: 14px 0 0; color: #566a7d; font-size: 1rem; } .ds-cota { position: relative; display: block; height: 1px; margin-top: 30px; background: rgba(3,66,135,.2); } .ds-cota::before, .ds-cota::after { content: \"\"; position: absolute; top: -5px; width: 1px; height: 11px; background: #034287; opacity: .55; } .ds-cota::before { left: 0; } .ds-cota::after { right: 0; }"
+    },
+    {
+      "name": "Campo de la orden",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Campo de formulario con etiqueta monoespaciada y subrayado naranja al foco.",
+      "html": "<label class=\"ds-field\"><span>Empresa</span><input placeholder=\"Nombre de tu empresa\"></label>",
+      "css": ".ds-field span { display: block; margin-bottom: 8px; font-family: 'Azeret Mono', monospace; font-size: .875rem; letter-spacing: .06em; text-transform: uppercase; color: #566a7d; } .ds-field input { width: 100%; height: 52px; padding: 0 14px; background: #eef2f6; border: 1px solid rgba(3,66,135,.2); outline: none; font-family: Archivo, system-ui, sans-serif; font-size: 1rem; color: #0b1f33; caret-color: #ff7300; transition: border-color .22s cubic-bezier(.16,1,.3,1), background .22s cubic-bezier(.16,1,.3,1), box-shadow .22s cubic-bezier(.16,1,.3,1); } .ds-field input::placeholder { color: #566a7d; opacity: 1; } .ds-field input:hover { border-color: rgba(3,66,135,.4); } .ds-field input:focus-visible { background: #fff; border-color: #034287; box-shadow: inset 0 -2px 0 #ff7300; }"
+    },
+    {
+      "name": "Cota de placa fotográfica",
+      "kind": "custom",
+      "refersTo": "cota",
+      "description": "La etiqueta de una fotografía: tope naranja, coordenada y servicio, sobre un plato navy que se desvanece.",
+      "html": "<figure class=\"ds-plate\"><img src=\"media/almacen.webp\" alt=\"\"><figcaption>A-03-01 · Almacenaje</figcaption></figure>",
+      "css": ".ds-plate { position: relative; overflow: hidden; background: #021d3d; } .ds-plate img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s cubic-bezier(.16,1,.3,1); } .ds-plate figcaption { position: absolute; left: 0; bottom: 0; display: flex; align-items: center; gap: 10px; padding: 9px 16px 9px 14px; background: linear-gradient(90deg, rgba(2,24,51,.94), rgba(2,24,51,.8) 68%, rgba(2,24,51,0)); color: #fff; font-family: 'Azeret Mono', monospace; font-size: .875rem; letter-spacing: .06em; text-transform: uppercase; } .ds-plate figcaption::before { content: \"\"; width: 24px; height: 1px; background: #ff7300; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "El plano de elevación de racks",
+    "overview": "El sistema toma el lenguaje del dibujo técnico con el que un almacén se proyecta y se direcciona — elevaciones, cotas, hatching, coordenadas de bahía — y lo usa como estructura, no como decoración: las ocho secciones están numeradas A-01 a A-08 y la página se recorre como un pasillo. La página alterna dos estados físicos, la hoja de plano en blanco frío y el pasillo filmado en navy, y esa alternancia es el ritmo del scroll. El azul dibuja, el naranja señala, y el material fotográfico y fílmico del cliente se muestra enmarcado pero sin estilizar.",
+    "keyCharacteristics": [
+      "Ninguna esquina redondeada en todo el sistema",
+      "Naranja reservado a posición activa y acción",
+      "El monoespaciado solo mide: coordenadas, niveles, cotas, conteos",
+      "La profundidad es perspectiva real, no sombra de color",
+      "Cada región movida por scroll tiene ruta equivalente sin movimiento"
+    ],
+    "rules": [
+      { "name": "The Signal Rule", "body": "El naranja marca dónde está el visitante y qué puede hacer. Si un elemento naranja no es la posición activa ni una acción, está mal pintado.", "section": "colors" },
+      { "name": "The Two Grounds Rule", "body": "Solo hay dos fondos: hoja #eef2f6 y pasillo #021d3d. Una sección nueva elige uno; no se inventa un tercero ni un degradado entre ambos.", "section": "colors" },
+      { "name": "The Drawn Line Rule", "body": "Toda línea es azul a 1px; las que miden llevan topes. Una línea sin tope es un borde, una con topes es una cota.", "section": "colors" },
+      { "name": "The Measurement Rule", "body": "El monoespaciado es para coordenadas, cotas, niveles y conteos. Una instrucción o una etiqueta de navegación en mono es un disfraz técnico.", "section": "typography" },
+      { "name": "The No Eyebrow Rule", "body": "Ninguna sección lleva un rótulo pequeño encima del titular; las coordenadas viven en el margen o en el rail.", "section": "typography" },
+      { "name": "The Statement and Answer Rule", "body": "Los titulares se escriben en dos registros, enunciado y respuesta, diferenciados por color y —en el hero— por un escalón de tamaño.", "section": "typography" },
+      { "name": "The Offset Rule", "body": "Toda sombra tiene desplazamiento y desenfoque. Un halo de color sin desplazamiento es decoración.", "section": "elevation" },
+      { "name": "The Dark Ground Rule", "body": "Sobre navy las sombras son negras; una sombra navy sobre navy no separa nada.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do elegir uno de los dos fondos del sistema para cada sección nueva.",
+      "Do anclar toda anotación monoespaciada a algo medible.",
+      "Do construir profundidad con perspective y translateZ, dejando que la sombra apoye.",
+      "Do dar a cada región movida por scroll una ruta equivalente bajo prefers-reduced-motion, con el contenido visible por defecto.",
+      "Do declarar cuando un elemento es un esquema ilustrativo, como hace el mapa del WMS.",
+      "Do usar texto navy sobre el naranja; el blanco sobre #ff7300 no alcanza 4.5:1."
+    ],
+    "donts": [
+      "Don't redondear esquinas: el sistema no tiene un solo radio.",
+      "Don't usar naranja para nada que no sea posición activa o acción.",
+      "Don't poner un rótulo pequeño encima de un titular.",
+      "Don't atenuar texto para expresar profundidad: se atenúa el marco.",
+      "Don't usar glifos unicode como íconos; hay símbolos SVG propios de trazo 1.6.",
+      "Don't teñir de navy una sombra que cae sobre navy.",
+      "Don't poner instrucciones o navegación en Azeret Mono."
+    ]
+  }
+}

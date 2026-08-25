@@ -377,7 +377,9 @@ figure { margin: 0; }
 .aisle-meter span.is-on { color: #fff; }
 .aisle-meter span.is-on i { transform: scaleX(1); background: var(--orange); }
 .aisle-cue {
-  text-transform: none; letter-spacing: .04em;
+  font-family: "Archivo", "Segoe UI", system-ui, sans-serif;
+  font-size: .875rem; font-weight: 500;
+  text-transform: none; letter-spacing: 0;
   position: absolute; z-index: 9; bottom: 30px; left: 50%;
   display: flex; align-items: center; gap: 12px;
   color: rgba(255, 255, 255, .58); transform: translateX(-50%);
@@ -931,11 +933,11 @@ figure { margin: 0; }
   .racks-floor { left: 0; bottom: 20px; }
   .wms-grid { grid-template-columns: repeat(8, 1fr); }
   .corridor { height: 380vh; }
-  .corridor-stage { min-height: 620px; padding-top: 72px; }
-  .corridor-floor { bottom: 58%; }
-  .corridor-van { bottom: calc(58% - 10px); }
-  .corridor-track { bottom: 3%; height: 54%; }
-  /* la altura del track vive solo aquí; no volver a declararla más abajo */
+  .corridor-stage { min-height: 560px; padding-top: 72px; padding-bottom: 0; }
+  .corridor-floor { bottom: 42%; }
+  .corridor-van { bottom: calc(42% - 10px); }
+  /* única altura del track en la ruta animada; la de movimiento reducido es aparte */
+  .corridor-track { bottom: 4%; height: 40%; }
   .corridor-head .lede { display: none; }
   .corridor-head { gap: 14px; }
   .stages { gap: 16px; padding: 30px 18px 0; }

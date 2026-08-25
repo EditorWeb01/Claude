@@ -301,7 +301,7 @@
       const steps = Math.max(stages.length - 1, 1);
       const step = travel * steps;
       const index = Math.min(Math.floor(step), steps - 1);
-      /* el barrido ocupa solo el 14% central de cada paso: casi cualquier posición
+      /* el barrido ocupa solo el 9% central de cada paso: casi cualquier posición
          sostenida deja una etapa encuadrada */
       const local = smoothstep(clamp((step - index - 0.455) / 0.09));
       const center = stageCenters[index] + (stageCenters[index + 1] - stageCenters[index]) * local;
